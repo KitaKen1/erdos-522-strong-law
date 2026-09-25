@@ -1,0 +1,11 @@
+name = "erdos522_strong_law_fc"
+version = "0.1.0"
+defaultTargets = ["Erdos522StrongLawFC"]
+
+[[require]]
+name = "formal_conjectures"
+git = "https://github.com/google-deepmind/formal-conjectures"
+rev = "2424bb480c590237ffbb2cc831ae4cb8977e045a"
+
+[[lean_lib]]
+name = "Erdos522StrongLawFC"

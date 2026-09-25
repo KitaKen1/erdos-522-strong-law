@@ -1,0 +1,11 @@
+name = "erdos522_strong_law_lean4web"
+version = "0.1.0"
+defaultTargets = ["Erdos522StrongLawLean4Web"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "5e0c4e5239cb0a2d86d68a884bf52cfd963fce22"
+
+[[lean_lib]]
+name = "Erdos522StrongLawLean4Web"
