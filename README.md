@@ -59,13 +59,13 @@ log-Sobolev or Pisier inequality and no small-ball estimate from the literature.
 qualitative limit is proved.
 
 **Notation.** Write $`N=n+1`$ for the number of coefficients, $`x\in\{0,1\}^N`$ for the coefficient
-bits, $`\mathrm{sgn}(x_k)=\pm1`$, and $`\operatorname{cav}F=\frac1{2\pi}\int_0^{2\pi}F(\theta)\,d\theta`$.
+bits, $`\mathrm{sgn}(x_k)=\pm1`$, and $`\mathrm{cav}\,F=\frac1{2\pi}\int_0^{2\pi}F(\theta)\,d\theta`$.
 For a radius $`e^s`$ put
 
 ```math
-\sigma^2(s)=\sum_{k<N}e^{2ks},\qquad \rho_k(s)=\frac{e^{ks}}{\sigma(s)},\qquad
-W_s(\theta)=\sum_{k<N}\mathrm{sgn}(x_k)\,\rho_k(s)\,e^{ik\theta},\qquad
-m_s(\theta)=\sum_{k<N}\rho_k(s)\,e^{ik\theta}.
+\sigma^2(s)=\sum_{k\lt N}e^{2ks},\qquad \rho_k(s)=\frac{e^{ks}}{\sigma(s)},\qquad
+W_s(\theta)=\sum_{k\lt N}\mathrm{sgn}(x_k)\,\rho_k(s)\,e^{ik\theta},\qquad
+m_s(\theta)=\sum_{k\lt N}\rho_k(s)\,e^{ik\theta}.
 ```
 
 For $`0/1`$ coefficients, $`2f(e^{s+i\theta})/\sigma(s)=W_s(\theta)+m_s(\theta)`$ (write $`Z_s=W_s+m_s`$);
@@ -75,17 +75,17 @@ for $`\pm1`$ coefficients, $`f(e^{s+i\theta})/\sigma(s)=W_s(\theta)`$ (write $`Z
 
 The law of the whole coefficient sequence is the infinite product of the uniform law on
 $`\{0,1\}`$ (resp. $`\{\pm1\}`$), and the first $`N`$ bits are uniform on $`\{0,1\}^N`$. By the first
-Borel–Cantelli lemma it suffices to prove **complete convergence**: for every $`\varepsilon>0`$,
+Borel–Cantelli lemma it suffices to prove **complete convergence**: for every $`\varepsilon\gt 0`$,
 
 ```math
-\sum_n \Pr\Bigl(\Bigl|\tfrac{2R_n}{n}-1\Bigr|>\varepsilon\Bigr)<\infty .
+\sum_n \Pr\Bigl(\Bigl|\tfrac{2R_n}{n}-1\Bigr|\gt \varepsilon\Bigr)\lt \infty .
 ```
 
 ### 1. Jensen's formula at three radii
 
 For a nonzero polynomial with $`|\mathrm{lead}|=1`$, Jensen's formula gives
-$`L(s):=\operatorname{cav}\log|f(e^{s+i\theta})|=\sum_{\alpha}\log\max(e^s,|\alpha|)`$. Each summand is
-convex in $`s`$ with slope $`1`$ exactly when $`|\alpha|\le e^s`$, hence for $`h>0`$
+$`L(s):=\mathrm{cav}\,\log|f(e^{s+i\theta})|=\sum_{\alpha}\log\max(e^s,|\alpha|)`$. Each summand is
+convex in $`s`$ with slope $`1`$ exactly when $`|\alpha|\le e^s`$, hence for $`h\gt 0`$
 
 ```math
 \frac{L(0)-L(-h)}h\ \le\ R_n\ \le\ \frac{L(h)-L(0)}h .
@@ -93,7 +93,7 @@ convex in $`s`$ with slope $`1`$ exactly when $`|\alpha|\le e^s`$, hence for $`h
 
 With $`A(s)=\tfrac12\log\sigma^2(s)`$, the function $`A(s)-ns/2`$ is even and
 $`0\le A(s)-ns/2-A(0)\le n^2s^2/4`$ (pair $`k\leftrightarrow n-k`$ and use $`\cosh u\le e^{u^2/2}`$).
-Put $`\Lambda=L-A`$, so $`\Lambda(s)=\operatorname{cav}\log|Z_s|`$ up to an additive constant. If
+Put $`\Lambda=L-A`$, so $`\Lambda(s)=\mathrm{cav}\,\log|Z_s|`$ up to an additive constant. If
 $`\Lambda(\pm h)\le\kappa+E`$ and $`\Lambda(0)\ge\kappa-E`$, then
 
 ```math
@@ -106,33 +106,33 @@ $`n`$, a common constant $`\kappa`$ and an error $`E=E_n\to0`$, with summable fa
 ### 2. Smoothing, and the lower bound on the unit circle
 
 Let $`\varphi_\delta(z)=\tfrac12\log(|z|^2+\delta^2)\ge\log|z|`$ and $`\psi_\beta(z)=\beta^2/(|z|^2+\beta^2)`$.
-The upper bounds use $`\Lambda(s)\le\operatorname{cav}\varphi_\delta(Z_s)`$. For the lower bound at
-$`s=0`$ we use, for $`z\ne0`$ and $`0<\eta\le\delta\le1`$,
+The upper bounds use $`\Lambda(s)\le\mathrm{cav}\,\varphi_\delta(Z_s)`$. For the lower bound at
+$`s=0`$ we use, for $`z\ne0`$ and $`0\lt \eta\le\delta\le1`$,
 
 ```math
 \varphi_\delta(z)-\log|z|\ \le\ \frac{\delta^2}{2\beta^2}+2\log\frac{2\delta}\eta\,\psi_\beta(z)
-+\mathbf 1_{|z|<\eta}\Bigl(1+\log\frac1{|z|}\Bigr).
++\mathbf 1_{|z|\lt \eta}\Bigl(1+\log\frac1{|z|}\Bigr).
 ```
 
 The last term is controlled by two ingredients.
 
 - **A deterministic $`L^2`$ bound.** Every root of a nonzero $`0/1`$ or $`\pm1`$ polynomial has
-  $`|\alpha|<2`$ (Cauchy bound), and $`|e^{it}-\rho|\ge|\sin(t/2)|`$ for $`0\le\rho\le2`$; hence
-  $`\operatorname{cav}(\log|f(e^{i\theta})|)^2\le400N^2`$. By Cauchy–Schwarz, the contribution of a set
+  $`|\alpha|\lt 2`$ (Cauchy bound), and $`|e^{it}-\rho|\ge|\sin(t/2)|`$ for $`0\le\rho\le2`$; hence
+  $`\mathrm{cav}\,(\log|f(e^{i\theta})|)^2\le400N^2`$. By Cauchy–Schwarz, the contribution of a set
   of $`\theta`$ of measure $`\mu`$ is at most $`(1+\log N)\mu+20N\sqrt\mu`$.
 - **Super-polynomially small balls by separation.** Let
-  $`B=\{\theta:\exists c\in\{-1,0,1\}^K\setminus\{0\},\ |\sum_{j<K}c_je^{ij\theta}|<2\varepsilon\}`$. For
+  $`B=\{\theta:\exists c\in\{-1,0,1\}^K\setminus\{0\},\ |\sum_{j\lt K}c_je^{ij\theta}|\lt 2\varepsilon\}`$. For
   $`\theta\notin B`$ the $`2^K`$ possible values of the first $`K`$ terms of $`f(e^{i\theta})`$ are
   $`2\varepsilon`$-separated, so, after conditioning on the other coefficients,
-  $`\Pr(|f(e^{i\theta})|<\varepsilon)\le2^{-K}`$. Factoring the nonzero integer polynomials
+  $`\Pr(|f(e^{i\theta})|\lt \varepsilon)\le2^{-K}`$. Factoring the nonzero integer polynomials
   $`\sum c_jz^j`$ (their leading coefficients have modulus at least $`1`$) gives
-  $`\operatorname{cav}\mathbf 1_B\le3^K K(2\varepsilon)^{1/K}`$. With $`K\approx10\log_2N`$ and
+  $`\mathrm{cav}\,\mathbf 1_B\le3^K K(2\varepsilon)^{1/K}`$. With $`K\approx10\log_2N`$ and
   $`\varepsilon\approx N^{-40K}`$, the expected measure of the small-value set is at most $`2N^{-10}`$,
-  and Markov's inequality makes the event $`\{\mu>N^{-4}\}`$ summable.
+  and Markov's inequality makes the event $`\{\mu\gt N^{-4}\}`$ summable.
 
 ### 3. Concentration on the cube
 
-Every $`G:\{0,1\}^N\to\mathbb R`$ satisfies $`G-\mathbb EG=\sum_k\mathrm{sgn}(x_k)\,b_k(x_{<k})`$
+Every $`G:\{0,1\}^N\to\mathbb R`$ satisfies $`G-\mathbb EG=\sum_k\mathrm{sgn}(x_k)\,b_k(x_{\lt k})`$
 (Doob decomposition), and if $`\sum_kb_k^2\le v`$ pointwise then
 
 ```math
@@ -140,7 +140,7 @@ Every $`G:\{0,1\}^N\to\mathbb R`$ satisfies $`G-\mathbb EG=\sum_k\mathrm{sgn}(x_
 ```
 
 (induction on the coordinates, using $`\cosh u\le e^{u^2/2}`$). For
-$`G=\operatorname{cav}\varphi(W+m)`$ with $`|\nabla\varphi|\le L_1`$ and $`\|\nabla^2\varphi\|\le L_2`$, a
+$`G=\mathrm{cav}\,\varphi(W+m)`$ with $`|\nabla\varphi|\le L_1`$ and $`\|\nabla^2\varphi\|\le L_2`$, a
 **square-root decomposition** into blocks of length $`L`$ gives
 
 ```math
@@ -159,15 +159,15 @@ $`t=N^{-1/8}`$ all tails are summable.
   $`\tau_j\gamma+\sum_{k\ge j}\mathrm{sgn}(x_k)a_k`$ and the stability
   $`\tau\gamma+\rho\gamma'\sim\sqrt{\tau^2+\rho^2}\,\gamma`$. The second-order mismatch
   $`-\tfrac12\mathrm{Re}(\bar a_j^2\,\mathbb E\,Q(U_j))`$ with $`Q(z)=z^2/(|z|^2+\delta^2)^2`$ is summed
-  by parts against the geometric partial sums $`\sum_{j<J}\rho_j^2e^{-2ij\theta}=O(1/(N|\sin\theta|))`$.
+  by parts against the geometric partial sums $`\sum_{j\lt J}\rho_j^2e^{-2ij\theta}=O(1/(N|\sin\theta|))`$.
   The result is $`|\mathbb E\varphi_\delta(W_s(\theta))-\kappa_\delta|\le7\rho_{\max}/\delta^3+P_{\max}(1/(8\delta^2)+2N\rho_{\max}/\delta^3)`$,
   where $`\kappa_\delta=\mathbb E\varphi_\delta(\gamma)`$ is **the same constant at all three radii**.
   Its value is never needed.
 - **Littlewood–Offord.** By the Erdős–Sperner argument,
-  $`\Pr(|\sum_k\mathrm{sgn}(x_k)e^{ik\theta}+t|<r)\le(2r+2)/\sqrt N`$. This bounds the expected
+  $`\Pr(|\sum_k\mathrm{sgn}(x_k)e^{ik\theta}+t|\lt r)\le(2r+2)/\sqrt N`$. This bounds the expected
   smoothing error without any Gaussian computation.
-- The mean term $`m_s`$ of the $`0/1`$ case costs $`\operatorname{cav}|m_s|/(2\delta)`$, and
-  $`\operatorname{cav}|m_s|\le\sqrt{2\varepsilon_b}+20/(\sqrt N\varepsilon_b)`$.
+- The mean term $`m_s`$ of the $`0/1`$ case costs $`\mathrm{cav}\,|m_s|/(2\delta)`$, and
+  $`\mathrm{cav}\,|m_s|\le\sqrt{2\varepsilon_b}+20/(\sqrt N\varepsilon_b)`$.
 
 ### 5. Parameters
 
